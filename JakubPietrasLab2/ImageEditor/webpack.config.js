@@ -39,6 +39,34 @@ const config = {
           },
         ],
       },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {sourceMap: true},
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: [
+                autoprefixer({browsers: ['> 0.1%']}),
+              ],
+              sourceMap: true,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.jpg$/,
+        loader: 'url-loader',
+        options: { 
+            limit: 8000,
+            name: 'images/[hash]-[name].[ext]',
+        },
+        exclude: /node_modules/,
+      },
     ],
   },
   plugins: [
