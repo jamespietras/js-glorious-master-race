@@ -1,0 +1,9 @@
+.editor {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  &__canvas {
+    margin: 20px 0 40px;
+  }
+}
