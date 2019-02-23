@@ -1,0 +1,17 @@
+.note {
+  box-shadow: 8px 7px 9px -5px rgba(112, 96, 77, 0.71);
+  cursor: move;
+  position: absolute;
+
+  &--blue {
+    background: linear-gradient(to bottom, #BCFFF8 1%, #99FFEC 67%, #8DF4E0 100%);
+  }
+
+  &--green {
+    background: linear-gradient(to bottom, #E5FFBC 1%, #DFFF99 67%, #D5F48D 100%);
+  }
+
+  &--yellow {
+    background: linear-gradient(to bottom, #FFF8BC 1%, #FFEC99 67%, #F4E08D 100%);
+  }
+}
