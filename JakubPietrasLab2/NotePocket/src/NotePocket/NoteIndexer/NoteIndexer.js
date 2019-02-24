@@ -26,10 +26,23 @@ class NoteIndexer {
     });
   }
 
-  subscribe(id, handler) {
+  subscribe(id, handler, initialIndex) {
     const assignedLayerIndex = this.subscribers.length;
 
-    this.subscribers.push(new Subscriber(id, handler, assignedLayerIndex));
+    const newSubscriber = new Subscriber(id, handler, initialIndex || assignedLayerIndex);
+    this.subscribers.push(newSubscriber);
+
+    this.subscribers = this.subscribers.sort((a, b) => {
+      if (a.layerIndex === b.layerIndex) {
+        return 0;
+      } else if (a.layerIndex > b.layerIndex) {
+        return 1;
+      } else {
+        return -1;
+      }
+    });
+    
+    return newSubscriber.layerIndex;
   }
 }
 

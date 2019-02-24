@@ -59,7 +59,7 @@ const config = {
         ],
       },
       {
-        test: /\.wav$/,
+        test: /\.(jpg|png)$/,
         loader: 'url-loader',
         options: { 
             limit: 8000,
